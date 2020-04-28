@@ -8,6 +8,7 @@
 \usepackage{tipa}
 \usepackage{tipx}
 \usepackage{tikz}
+\usepackage{amsmath}
 
 \usepackage[croatian]{babel}
 \usepackage{indentfirst}
@@ -26,14 +27,15 @@
 \setmainfont[Numbers={Lining, Monospaced}, Scale=1.1]{Brill}
 \renewcommand{\rubysep}{0ex}
 \renewcommand{\rubysize}{0.5}
+\renewcommand{\arraystretch}{1.25}
 
 \newcommand{\pitch}[1]{\raisebox{-\dp\strutbox}{
 	\begin{tikzpicture}[
 		every node/.style={inner sep=0.0, outer sep=0.0},
-		dot/.style={draw, fill, circle, minimum size=0.7ex}
+		dot/.style={draw, fill, circle, minimum size=0.5ex}
 	]
 	\foreach[count=\i from 1] \x/\p in {#1} 
-		\draw node (P\i) at (\i * 1.1em, 0) {\x\strut} node[dot, anchor=base] (C\i) at (\i * 1.1em, \p * 0.5em + 0.8em) {};
+		\draw node (P\i) at (\i * 1.1em, 0) {\x\strut} node[dot, anchor=base] (C\i) at (\i * 1.1em, \p * 0.4em + 0.8em) {};
 	
 	\foreach[count=\i from 1, evaluate=\i as \j using int(\i - 1)] \x/\p in {#1}
 		\ifnum \j>0
@@ -75,7 +77,7 @@
 	To je ujedno i najmanja nedjeljiva izgovorna jedinica neke riječi.
 	Karakteristično obilježje japanskog jezika jest da svaka m\=ora ima jednako trajanje.
 	U načelu, 1 m\=ora je reprezentirana 1 hiraganom, osim malih ゃ, ゅ, ょ koji su nalijepljeni na drugu hiraganu, npr. u しゃ, しゅ, しょ.
-	,,Samoglasno N'' ん se broji kao 1 m\=ora.
+	\textit{Samoglasno N} ん se broji kao 1 m\=ora.
 	I \textit{sokuon} っ (npr. u げっかん) i \textit{ch\=oonpo} ー  (npr. u ハート) se broje kao 1 m\=ora.
 	U tablici \ref{tab:mora-type} ispod kopiranoj s Wikipedije navedene su vrste m\=ora za radoznale:
 	
@@ -176,9 +178,9 @@
 	
 	\subsection{Naglasni tipovi s obzirom na broj m\=ora u riječi}
 	\subsubsection*{1 m\=ora}
-	Riječi koje se sastoje od 1 m\=ore koje počinju niskom morom imaju \textit{heiban} tip naglaska, a koje počinju visokom \textit{atamadaka} vrstu naglaska.
+	Riječi koje se sastoje od 1 m\=ore koje počinju niskom morom imaju \textit{heiban} tip naglaska, a koje počinju visokom \textit{atamadaka} tip naglaska.
 	Drugi tipovi nisu mogući za riječi s 1 m\=orom.
-	Primjeri riječi različitih naglasaka: (skupa s česticom)
+	Primjeri riječi različitih naglasnih tipova: (skupa s česticom)
 	\begin{enumerate}
 		\item \textit{heiban}
 		\begin{multicols}{3}
@@ -397,7 +399,7 @@
 	Njihov tip naglaska je gotovo uvijek \textit{nakadaka}, i to takav da je naglasak na prvoj mori druge (ili posljednje) riječi u nizu.
 	Pritom nije bitno kakav naglasak imaju individualne riječi.
 	
-	Primjeri: (na pojedinačne riječi su dodane čestice kako bi se primijetila razlika između \textit{heiban} i \textit{odaka} naglasaka)
+	Primjeri: (na pojedinačne riječi su dodane čestice kako bi se primijetila razlika između \textit{heiban} i \textit{odaka} naglasnih tipova)
 	\begin{itemize}
 		\item \pitch{や/0,ま/1,が/0}(山が）＋\pitch{の/0,ぼ/1,り/1,が/1}（登りが）＝\pitch{や/0,ま/1,の/1,ぼ/0,り/0}（山登り）
 		\item \pitch{は/0,く/1,じ/1,が/1}（白人が）＋\pitch{だ/0,ん/1,せ/1,い/1,が/1}（男性が）＝%
@@ -405,19 +407,87 @@
 	\end{itemize}
 	
 	Međutim, ima i riječi koje ne slijede gore navedeno pravilo o naglasku na početku druge riječi.
-	Često korišten primjer je riječi za jezik i nacionalnost, koje unose neviđen kuršlus u naglaske:
-	\begin{itemize}
-		\item \pitch{に/0,ほ/1,ん/0}（日本）、\pitch{に/0,ほ/1,ん/1,ご/1}（日本語）、\pitch{に/0,ほ/1,ん/1,じ/1,ん/0}（日本人）
-		\item \pitch{ち\m{ゅ}/1,う/0,ご/0,く/0}（中国）、\pitch{ち\m{ゅ}/0,う/1,ご/1,く/1,ご/1}、\pitch{ち\m{ゅ}/0,う/1,ご/1,く/1,じ/0,ん/0}
-		\item \pitch{か/1,ん/0,こ/0,く/0}（韓国）、\pitch{か/0,ん/1,こ/1,く/1,ご/1}、\pitch{か/0,ん/1,こ/1,く/1,じ/0,ん/0}
-		\item \pitch{ど/1,い/0,つ/0}（ドイツ）、\pitch{ど/0,い/1,つ/1,ご/1}、\pitch{ど/0,い/1,つ/1,じ/0,ん/0}
-		\item \pitch{ふ/0,ら/1,ん/1,す/1}（フランス）、\pitch{ふ/0,ら/1,ん/1,す/1,ご/1}、\pitch{ふ/0,ら/1,ん/1,す/1,じ/0,ん/0}
-		\item \pitch{く/0,ろ/1,あ/1,ち/1,あ/1}（クロアチア）、\pitch{く/0,ろ/1,あ/1,ち/1,あ/1,ご/0}、\pitch{く/0,ろ/1,あ/1,ち/1,あ/1,じ/0,ん/0}
-		\item \pitch{せ/0,る/1,び/1,あ/1}（セルビア）、\pitch{せ/0,る/1,び/1,あ/1,ご/1}、\pitch{せ/0,る/1,び/1,あ/1,じ/0,ん/0}
-		\item \pitch{ぼ/0,す/1,に/1,あ/1}（ボスニア）、\pitch{ぼ/0,す/1,に/1,あ/1,ご/0}、\pitch{ぼ/0,す/1,に/1,あ/1,じ/0,ん/0}
-	\end{itemize}
+	Riječi za nacionalnost sa sufiksom 人 uglavnom imaju naglasak jednu m\=oru prije じ iz 人, osim u slučaju kada ta m\=ora ne može nositi naglasak (日本, スペイン).
+	Riječi za jezik sa sufiksom 語 su \textit{heiban} ili \textit{nakadaka} s naglaskom na predzadnjoj m\=ori (odnosno jednoj prije ご), bez primijećenog posebnog pravila\footnote{
+	Može biti i da OJAD krivo daje naglaske za neke riječi.}.
+	U tablici \ref{tab:drzava} navedeni su neki primjeri država, nacionalnosti i jezika.
+
+	\begin{table}[htb]
+		\centering
+		\caption{Primjeri država, jezika i nacionalnosti}
+		\label{tab:drzava}
+		\begin{tabular}{llll}
+			\toprule
+			& \multicolumn{1}{c}{国}　& \multicolumn{1}{c}{人} & \multicolumn{1}{c}{語} \\
+			\midrule
+			日本 & \pitch{に/0,ほ/1,ん/0} & \pitch{に/0,ほ/1,ん/1,じ/1,ん/0} & \pitch{に/0,ほ/1,ん/1,ご/1} \\
+			中国 & \pitch{ち\m{ゅ}/1,う/0,ご/0,く/0} & \pitch{ち\m{ゅ}/0,う/1,ご/1,く/1,じ/0,ん/0} & \pitch{ち\m{ゅ}/0,う/1,ご/1,く/1,ご/1} \\
+			韓国 & \pitch{か/1,ん/0,こ/0,く/0} & \pitch{か/0,ん/1,こ/1,く/1,じ/0,ん/0} & \pitch{か/0,ん/1,こ/1,く/1,ご/1} \\
+			ロシア & \pitch{ろ/1,し/0,あ/0} & \pitch{ろ/0,し/1,あ/1,じ/0,ん/0} & \pitch{ろ/0,し/1,あ/1,ご/1} \\
+			ドイツ & \pitch{ど/1,い/0,つ/0} & \pitch{ど/0,い/1,つ/1,じ/0,ん/0} & \pitch{ど/0,い/1,つ/1,ご/1} \\
+			スペイン & \pitch{す/0,ぺ/1,い/0,ん/0} & \pitch{す/0,ぺ/1,い/1,ん/0,じ/0,ん/0} & \pitch{す/0,ぺ/1,い/1,ん/1,ご/1} \\
+			フランス & \pitch{ふ/0,ら/1,ん/1,す/1} & \pitch{ふ/0,ら/1,ん/1,す/1,じ/0,ん/0} & \pitch{ふ/0,ら/1,ん/1,す/1,ご/1} \\
+			ポーランド & \pitch{ぽ/1,ー/0,ら/0,ん/0,ど/0} & \pitch{ぽ/0,ー/1,ら/1,ん/1,ど/1,じ/0,ん/0} & \pitch{ぽ/0,ー/1,ら/1,ん/1,ど/1,ご/1} \\
+			クロアチア & \pitch{く/0,ろ/1,あ/1,ち/1,あ/1} & \pitch{く/0,ろ/1,あ/1,ち/1,あ/1,じ/0,ん/0} & \pitch{く/0,ろ/1,あ/1,ち/1,あ/1,ご/0} \\
+			セルビア & \pitch{せ/0,る/1,び/1,あ/1} & \pitch{せ/0,る/1,び/1,あ/1,じ/0,ん/0} & \pitch{せ/0,る/1,び/1,あ/1,ご/1} \\
+			ボスニア & \pitch{ぼ/0,す/1,に/1,あ/1} & \pitch{ぼ/0,す/1,に/1,あ/1,じ/0,ん/0} & \pitch{ぼ/0,す/1,に/1,あ/1,ご/0} \\
+			アラビア & \pitch{あ/0,ら/1,び/1,あ/1} & \pitch{あ/0,ら/1,び/1,あ/1,じ/0,ん/0} & \pitch{あ/0,ら/1,び/1,あ/1,ご/0} \\
+			\bottomrule& 
+		\end{tabular}
+	\end{table}
+
 	
 	\subsection{Naglasak u čestim kombinacijama imenica s drugim riječima}
+	Dosad razmatrani primjeri uključivali su po jednu jednostavnu ili složenu imenicu koja sama za sebe čini naglasnu cjelinu.
+	No, imenice se spajaju i s kopulama i različitim sufiksima, čineći opet jednu naglasnu cjelinu koja ima promijenjen naglasak u odnosu na individualne riječi od kojih je nastala.
+	Nasreću, ove promjene se doagađaju po predvidivim, relativno jednostavnim pravilima.
+	
+	\subsubsection*{Spajanje imenica s kopulama だ i です}
+	Spajanjem imenice s kopulom だ nastaje naglasna cjelina čiji naglasak ovisi o naglasku imenice, na sljedeći način:
+	\begin{enumerate}
+		\item Ako imenica nema naglasak (\textit{heiban}), tada naglasna cjelina opet nema naglasak
+		\begin{itemize}
+			\item （学生）\pitch{が/0,く/1,せ/1,い/1}＋\pitch{だ/0}＝\pitch{が/0,く/1,せ/1,い/1,だ/1}
+		\end{itemize}
+		\item Ako imenica ima naglasak (ostali tipovi), tada naglasna cjelina ima naglasak na istom mjestu na kojem je bio u imenici
+		\begin{itemize}
+			\item （辞書）\pitch{じ/1,し\m{ょ}/0}＋\pitch{だ/0}＝\pitch{じ/1,し\m{ょ}/0,だ/0} --- \textit{atamadaka}
+			\item （先生）\pitch{せ/1,ん/1,せ/1,い/0}＋\pitch{だ/0}＝\pitch{せ/0,ん/1,せ/1,い/0,だ/0} --- \textit{nakadaka}
+			\item （男）\pitch{お/0,と/1,こ/1}＋\pitch{だ/0}＝\pitch{お/0,と/1,こ/1,だ/0} --- \textit{odaka}
+		\end{itemize}
+	\end{enumerate}
+
+	S druge strane, spajanje imenice s kopulom です uvodi male promjene u naglasak:
+	\begin{enumerate}
+		\item Ako imenica nema naglasak (\textit{heiban}), tada naglasna cjelina ima naglasak na mori で u です:
+		\begin{itemize}
+			\item （学生）\pitch{が/0,く/1,せ/1,い/1}＋\pitch{で/1,す/0}＝\pitch{が/0,く/1,せ/1,い/1,で/1,す/0}
+		\end{itemize}
+		\item Ako imenica ima naglasak (ostali tipovi), tada naglasna cjelina ima naglasak na istom mjestu na kojem je bio u imenici
+		\begin{itemize}
+			\item （辞書）\pitch{じ/1,し\m{ょ}/0}＋\pitch{で/1,す/0}＝\pitch{じ/1,し\m{ょ}/0,で/0,す/0} --- \textit{atamadaka}
+			\item （先生）\pitch{せ/1,ん/1,せ/1,い/0}＋\pitch{で/1,す/0}＝\pitch{せ/0,ん/1,せ/1,い/0,で/0,す/0} --- \textit{nakadaka}
+			\item （男）\pitch{お/0,と/1,こ/1}＋\pitch{で/1,す/0}＝\pitch{お/0,と/1,こ/1,で/0,す/0} --- \textit{odaka}
+		\end{itemize}
+	\end{enumerate}
+
+	Iako se kopule \pitch{だ/0} i \pitch{で/1,す/0} ne koriste kao samostalne riječi, u svrhu njihovog spajanja na imenice možemo si pomoći ako ih promatramo kao \textit{heiban}, odnosno \textit{atamadaka}.
+	Tada se gornje promjene mogu opisati samo jednim pravilom (koje vrijedi i šire od spajanja imenica s kopulom): \textit{atamadaka}, \textit{nakadaka} i \textit{odaka} \textit{gaze}\footnote{engl. \textit{override}, termin posuđen iz koncepta objektno orijentiranog programiranja koji, u današnje doba kada jezici kao što je Python dobivaju na popularnosti i rugaju se sa smislom života, doživljava sve veću propast} \textit{heiban}.
+	Možemo to promatrati i na još jedan način: \textit{heiban} je u stvari odsutnost naglaska, a budući da naglasna cjelina može imati najviše jedan naglasak, ostaje onaj naglasak koji je došao prvi po redu.
+	{\footnotesize\color{white} \textit{Treći način (hard-core): skup naglasaka, asocijativna operacija 
+	$f(\text{平板}, b) = b,\ f\left(a, \color{gray}\cdot\color{white}\right) = a$, i neutralni element 平板 čine monoid.}}
+
+	\subsubsection*{Spajanje imenica s česticama}
+	Često korištene čestice od jedne m\=ore, \pitch{は/0}、\pitch{も/0}、\pitch{が/0}、\pitch{を/0}、\pitch{に/0}、\pitch{で/0}、\pitch{と/0} nikad se ne koriste samostalno, ali opet, u okviru njihovog povezivanja na imenice, možemo smatrati da su \textit{heiban} tipa.
+	U tom slučaju naglasak će ostati na istom mjestu nakon što se na imenicu nalijepi neka čestica.
+	
+	Zapravo, ranije je razlika između \textit{heiban} i \textit{odaka} naglasnih tipova demonstrirana dodavanjem ovih čestica na kraj riječi upravo zahvaljujući ovom svojstvu, a to je da one ne mijenjaju mjesto naglaska unutar naglasne cijeline.
+	
+	Na isti način, složene čestice \pitch{で/1,は/0}、\pitch{で/1,も/0}、\pitch{に/1,も/0}、\pitch{と/1,も/0}、\pitch{か/1,が/0}、\pitch{か/1,を/0}、\pitch{か/1,も/0} možemo promatrati kao da su tipa \textit{odaka}.
+	Pravila o \textit{gaženju} naglasaka ostaju ista.
+	
+	\subsubsection*{Spajanje imenica s ostalim čestim nastavcima}
+	だろう、でしょう、〜らしい\textsuperscript{1}、〜らしい\textsuperscript{2}、〜みたい
 	
 	\section*{Coming up next...}
 	\section{Naglasak kod pridjeva}
