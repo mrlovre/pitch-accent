@@ -10,9 +10,9 @@
 
 \usepackage[croatian]{babel}
 \usepackage{indentfirst}
-\usepackage[a4paper, margin=2.5cm]{geometry}
+\usepackage[a4paper, margin=2cm]{geometry}
 \usepackage{enumitem}
-\usepackage[all]{nowidow}
+\usepackage[defaultlines=4, all]{nowidow}
 \usepackage{setspace}
 \usepackage{microtype}
 \usepackage{multicol}
@@ -21,9 +21,9 @@
 \setlist[itemize]{itemsep=0em, topsep=0.5em, wide, labelwidth=!, labelindent=0.5ex, leftmargin=1ex}
 \setlist[enumerate]{itemsep=0em, topsep=0.5em, wide, labelwidth=!, labelindent=0.5ex, leftmargin=1ex}
 
-\setCJKmainfont{Noto Serif CJK JP}
-\setCJKsansfont{Noto Sans CJK JP}
-\setmainfont[Numbers={Lining, Monospaced}, Scale=1.1]{Brill}
+\setCJKmainfont{Source Han Serif JP}
+\setCJKsansfont{Source Han Sans JP}
+\setmainfont[Numbers={Lining, Monospaced}]{Source Serif Pro}
 \renewcommand{\rubysep}{-0.5ex}
 \renewcommand{\rubysize}{0.5}
 \renewcommand{\arraystretch}{1.25}
@@ -51,11 +51,24 @@
 
 \begin{document}
 	\onehalfspacing
-	\maketitle
 	\pagenumbering{gobble}
+	\begin{titlepage}
+%		\centering%
+%		\vspace*{2em}
+%		{\LARGE Uvod u japanski naglasni sustav}
+%		
+%		\vspace{2em}
+%		Lovriša
+%		
+%		\vspace{\stretch{1}}
+%		
+%		\today
+		\maketitle
+	\end{titlepage}
+	\cleardoublepage
 	\thispagestyle{empty}
 	\tableofcontents
-	\newpage
+	\cleardoublepage
 	\pagenumbering{arabic}
 	
 	\tikzset{
@@ -84,24 +97,24 @@
 		\centering
 		\caption{Vrste m\=ora.}
 		\label{tab:mora-type}
-		\begin{tabular}{llll}
+		\begin{tabular}{clllc}
 			\toprule
-			& & & Br. m\=ora \\
-			\multicolumn{2}{l}{Vrsta} & Primjer & (u primjeru) \\
+			\multicolumn{2}{l}{Vrsta} & Primjer & & \makecell[b]{Broj m\=ora \\ (u primjeru)} \\
 			\midrule
-			V & samoglasnici & \e{お} & 1 \\
-			jV & palatalizirani samoglasnici & \e{よ} （世） & 1 \\
-			CV & suglasnik i samoglasnik & \e{こ} （子） & 1 \\
-			CjV & suglasnik i pal. samoglasnik & \e{きょ} （巨） & 1 \\
-			R & produljenje samoglasnika & きょ\e{う} （今日）、キ\e{ー}  & 2 \\
-			N & samoglasno N & こ\e{ん} （紺） & 2 \\
-			Q & udvostručavanje suglasnika & こ\e{っ}こ （国庫） & 3 \\
+			V & samoglasnici & \e{お} & & 1 \\
+			jV & palatalizirani samoglasnici & \e{よ} &（世） & 1 \\
+			CV & suglasnik i samoglasnik & \e{こ} &（子） & 1 \\
+			CjV & suglasnik i palatalizirani samoglasnik & \e{きょ} &（巨） & 1 \\
+			R & produljenje samoglasnika & きょ\e{う} &（今日）& 2 \\
+			 & & キ\e{ー} & & 2 \\
+			N & samoglasno N & こ\e{ん} &（紺） & 2 \\
+			Q & udvostručavanje suglasnika (geminacija) & こ\e{っ}こ &（国庫） & 3 \\
 			\bottomrule
 		\end{tabular}
 	\end{table}
 
-	Određena riječ može imati naglasak na samo jednoj, ili nijednoj m\=ori.
-	Od navedenih vrsta, samo V, jV, CV i CjV mogu nositi naglasak.
+	Određena riječ može imati naglasak na najviše jednoj m\=ori.
+	Od svih vrsta, samo prve četiri (V, jV, CV i CjV) mogu nositi naglasak.
 	
 	\subsection{Tonovi, intonacija i naglasak}
 	U japanskom tehnički razlikujemo samo dvije vrste tona: visoki i niski.
@@ -141,7 +154,7 @@
 	Naglasnu cjelinu čini niz riječi koji zajedno ima najviše jedan naglasak.
 	Svaka riječ inherentno ima ili nema određeni naglasak, no kad se više riječi udruži u naglasnu cjelinu, naglasak u pojedinim riječima može se izgubiti ili pomaknuti prema određenim pravilima.
 	Najčešće se radi o glavnoj riječi sa zanaglasnicama (čestice, kopula, pomoćni glagoli), ili o konjugiranom obliku neke riječi.
-	Neki primjeri naglasnih cjelina (naglašena m\=ora, ako postoji, je podebljana):
+	Neki primjeri naglasnih cjelina (naglašena m\=ora, gdje postoji, je podebljana):
 	\begin{itemize}
 		\item \pitch{こ/0,れ/1}＋\pitch{は/0}＝\pitch{こ/0,れ/1,は/1}
 		\item \pitch{た/0,な/1,か/1}＋\pitch{\e{で}/1,す/0}＝\pitch{た/0,な/1,か/1,\e{で}/1,す/0}（田中です）
@@ -262,7 +275,7 @@
 				\item \pitch{げ/1,ん/0,き/0,な/0}（元気な）
 				\item \pitch{き/1,れ/0,い/0,な/0}
 			\end{itemize}
-		\end{multicols} \pagebreak %dirty
+		\end{multicols} %\pagebreak %dirty
 		\item \textit{nakadaka}
 		\begin{multicols}{3}
 			\begin{itemize}
@@ -320,7 +333,7 @@
 				\item \pitch{ま/1,い/0,あ/0,さ/0}（毎朝）
 				\item \pitch{ま/1,い/0,ば/0,ん/0}（毎晩）
 			\end{itemize}
-		\end{multicols} \pagebreak %dirty
+		\end{multicols} %\pagebreak %dirty
 		\item \textit{nakadaka}
 		\begin{multicols}{3}
 			\begin{itemize}
