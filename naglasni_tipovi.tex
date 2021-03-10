@@ -1,0 +1,239 @@
+% !TeX root = document.tex
+S obzirom na poziciju unutar riječi, naglaske možemo podijeliti u četiri kategorije:
+\begin{enumerate}
+	\item \textit{heiban} 平板 --- neutralna intonacija, nema naglaska
+	\item \textit{atamadaka} 頭高 --- naglasak je na prvoj m\=ori (glavi)
+	\item \textit{nakadaka} 中高 --- naglasak nije na prvoj ni na zadnjoj m\=ori
+	\item \textit{odaka} 尾高 --- naglasak je na zadnjoj m\=ori (repu)
+\end{enumerate}
+Iako možemo reći da se u stvari radi o samo \textit{dvije} kategorije (bez naglaska --- \textit{heiban}, i s naglaskom --- sve ostale), svaka od navedenih kategorija ima svoje posebnosti s obzirom na promjene riječi (konjugacije), stoga je te promjene lakše promatrati kroz 4 kategorije.
+
+Naglasci se u rječnicima još označavaju brojem prema m\=ori koja je naglašena.
+Tako se \textit{atamadaka} označava sa [1], \textit{nakadaka} brojevima od [2] nadalje, a \textit{odaka} brojem zadnje m\=ore u riječi ili, prema konvenciji negativnog indeksiranja\footnote{ovu konvenciju popularizirao je programski jezik Python, a radi se o brojanju elemenata niza unatrag, [-1] predstavlja zadnji, [-2] predzadnji element, itd.}, sa [-1].
+Heiban se označava sa [0].
+
+Kod samostalnih riječi, \textit{heiban} i \textit{odaka} se ne razlikuju, jer intonacija nikad ne padne ni u jednom ni u drugom slučaju.
+Međutim, kada te riječi čine naglasnu cijelinu s drugim riječima, razlika u intonaciji postane primjetljiva:
+\begin{itemize}
+	\item \pitch{は/0,な/1}（鼻）、\pitch{は/0,な/1,\e{が}/1}（鼻が）--- \textit{heiban}
+	\item \pitch{は/0,な/1}（花）、\pitch{は/0,な/1,\e{が}/0}（花が）--- \textit{odaka}
+\end{itemize}
+
+Također, možemo primijetiti kako su visine tonova prve dvije m\=ore unutar neke naglasne cjeline međusobno uvijek različite (bilo niska-visoka, ili visoka-niska), pa se po tome lako može prepoznati početak riječi ili naglasne cjeline.
+
+\subsection{Naglasni tipovi s obzirom na broj m\=ora u riječi}
+\subsubsection*{1 m\=ora}
+Riječi koje se sastoje od 1 m\=ore koje počinju niskom morom su \textit{heiban}, a one koje počinju visokom \textit{atamadaka}.
+Drugi naglasni tipovi nisu mogući za riječi s 1 m\=orom.
+Primjeri riječi različitih naglasnih tipova (skupa s česticom radi lakšeg razlikovanja):
+\begin{enumerate}
+	\item \textit{heiban}
+	\begin{multicols}{3}
+		\begin{itemize}
+			\item \pitch{き/0,が/1}（気が）
+			\item \pitch{ひ/0,が/1}（日が）
+			\item \pitch{は/0,が/1}（葉が）
+		\end{itemize}
+	\end{multicols}
+	\item \textit{atamadaka}
+	\begin{multicols}{3}
+		\begin{itemize}
+			\item \pitch{き/1,が/0}（木が）
+			\item \pitch{ひ/1,が/0}（火が）
+			\item \pitch{は/1,が/0}（歯が）
+		\end{itemize}
+	\end{multicols}
+\end{enumerate}
+
+\subsubsection*{2 m\=ore}
+Riječi koje se sastoje od 2 m\=ore mogu imati sve tipove osim \textit{nakadaka}.
+Primjeri:
+\begin{enumerate}
+	\item \textit{heiban}
+	\begin{multicols}{3}
+		\begin{itemize}
+			\item \pitch{く/0,ち/1,が/1}（口）
+			\item \pitch{は/0,な/1,が/1}（鼻）
+			\item \pitch{く/0,び/1,が/1}（首）
+		\end{itemize}
+	\end{multicols}
+	\item \textit{atamadaka}
+	\begin{multicols}{3}
+		\begin{itemize}
+			\item \pitch{か/1,た/0,が/0}（肩）
+			\item \pitch{の/1,ど/0,が/0}（喉）
+		\end{itemize}
+	\end{multicols}
+	\item \textit{odaka}
+	\begin{multicols}{3}
+		\begin{itemize}
+			\item \pitch{か/0,み/1,が/0}（髪）
+			\item \pitch{み/0,み/1,が/0}（耳）
+			\item \pitch{む/0,ね/1,が/0}（胸）
+			\item \pitch{は/0,ら/1,が/0}（腹）
+			\item \pitch{ゆ/0,び/1,が/0}（指）
+			\item \pitch{あ/0,し/1,が/0}（足）
+		\end{itemize}
+	\end{multicols}
+\end{enumerate}
+
+\subsubsection*{3 m\=ore}
+Tek riječi od 3 i više m\=ora mogu imati sve tipove naglasaka.
+One su najčešće \textit{heiban} i \textit{atamadaka}, a rjeđe \textit{nakadaka} ili \textit{odaka}, stoga je korisno zapamtiti česte riječi koje spadaju pod zadnje dvije kategorije.
+Primjeri:
+\begin{enumerate}
+	\item \textit{heiban}
+	\begin{multicols}{3}
+		\begin{itemize}
+			\item \pitch{ふ/0,し/1,ぎ/1,な/1}
+			\item \pitch{カ/0,バ/1,ン/1,は/1}
+			\item \pitch{か/0,ん/1,じ/1,は/1}（漢字は）
+			\item \pitch{つ/0,ば/1,さ/1,は/1}（翼は）
+			\item \pitch{う/0,わ/1,さ/1,は/1}（噂は）
+			\item \pitch{し/0,か/1,た/1,は/1}（仕方は）
+		\end{itemize}
+	\end{multicols}
+	\item \textit{atamadaka}
+	\begin{multicols}{3}
+		\begin{itemize}
+			\item \pitch{ご/1,は/0,ん/0,は/0}（ご飯は）
+			\item \pitch{ご/1,ぜ/0,ん/0,は/0}（午前は）
+			\item \pitch{か/1,ぞ/0,く/0,は/0}（家族は）
+			\item \pitch{じ/1,ん/0,じ\m{ゃ}/0,は/0}（神社は）
+			\item \pitch{め/1,が/0,ね/0,は/0}
+			\item \pitch{け/1,し/0,き/0,は/0}（景色は）
+			\item \pitch{に/1,も/0,つ/0,は/0}（荷物は）
+			\item \pitch{で/1,ん/0,き/0,は/0}（電気は）
+			\item \pitch{て/1,ん/0,き/0,は/0}（天気は）
+			\item \pitch{げ/1,ん/0,き/0,な/0}（元気な）
+			\item \pitch{き/1,れ/0,い/0,な/0}
+		\end{itemize}
+	\end{multicols} %\pagebreak %dirty
+	\item \textit{nakadaka}
+	\begin{multicols}{3}
+		\begin{itemize}
+			\item \pitch{す/0,こ/1,し/0,は/0}（少しは）
+			\item \pitch{ひ/0,と/1,り/0,は/0}（一人は）
+			\item \pitch{ひ/0,と/1,つ/0,は/0}（一つは）
+			\item \pitch{い/0,つ/1,つ/0,は/0}（五つは）
+			\item \pitch{き/0,の/1,う/0,は/0}（昨日は）
+			\item \pitch{に/0,お/1,い/0,は/0}（匂いは）
+			\item \pitch{あ/0,な/1,た/0,は/0} 
+		\end{itemize}
+	\end{multicols}
+	\item \textit{odaka}
+	\begin{multicols}{3}
+		\begin{itemize}
+			\item \pitch{あ/0,し/1,た/1,は/0}（明日は）
+			\item \pitch{こ/0,と/1,ば/1,は/0}（言葉は）
+			\item \pitch{ふ/0,た/1,り/1,は/0}（二人は）
+			\item \pitch{ふ/0,た/1,つ/1,は/0}（二つは）
+			\item \pitch{み/0,っ/1,つ/1,は/0}（三つは）
+			\item \pitch{よ/0,っ/1,つ/1,は/0}（四つは）
+			\item \pitch{み/0,ん/1,な/1,は/0}（皆は）
+			\item \pitch{お/0,と/1,こ/1,は/0}（男は）
+			\item \pitch{お/0,ん/1,な/1,は/0}（女は）
+			\item \pitch{あ/0,た/1,ま/1,は/0}（頭は）
+		\end{itemize}
+	\end{multicols}
+\end{enumerate}
+
+\subsubsection*{4 m\=ore}
+Često su imenice od 4 m\=ore \textit{heiban}, pogotovo one koje se pišu s dva kanđija.
+Stoga opet valja zapamtiti česte iznimke od ovoga pravila.
+Primjeri: (ovaj put popratne čestice su izostavljene radi bolje preglednosti)
+\begin{enumerate}
+	\item \textit{heiban}
+	\begin{multicols}{3}
+		\begin{itemize}
+			\item \pitch{が/0,っ/1,こ/1,う/1}（学校）
+			\item \pitch{ぎ/0,ん/1,こ/1,う/1}（銀行）
+			\item \pitch{さ/0,い/1,て/1,い/1}（最低）
+			\item \pitch{さ/0,い/1,あ/1,く/1}（最悪）
+			\item \pitch{さ/0,い/1,こ/1,う/1}（最高）
+			\item \pitch{へ/0,い/1,ば/1,ん/1}（平板）
+			\item \pitch{べ/0,ん/1,き\m{ょ}/1,う/1}（勉強）
+			\item \pitch{し/0,ん/1,ぱ/1,い/1}（心配）
+		\end{itemize}
+	\end{multicols}
+	\item \textit{atamadaka}
+	\begin{multicols}{3}
+		\begin{itemize}
+			\item \pitch{お/1,ん/0,が/0,く/0}（音楽）
+			\item \pitch{あ/1,い/0,さ/0,つ/0}（挨拶）
+			\item \pitch{め/1,い/0,わ/0,く/0}（迷惑）
+			\item \pitch{ま/1,い/0,に/0,ち/0}（毎日）
+			\item \pitch{ま/1,い/0,あ/0,さ/0}（毎朝）
+			\item \pitch{ま/1,い/0,ば/0,ん/0}（毎晩）
+		\end{itemize}
+	\end{multicols} %\pagebreak %dirty
+	\item \textit{nakadaka}
+	\begin{multicols}{3}
+		\begin{itemize}
+			\item \pitch{せ/0,ん/1,せ/1,い/0}（先生）
+			\item \pitch{は/0,ん/1,ぶ/1,ん/0}（半分）
+			\item \pitch{あ/0,ん/1,な/1,い/0}（案内）
+			\item \pitch{お/0,と/1,と/1,い/0}（一昨日）
+			\item \pitch{ア/0,パ/1,ー/0,ト/0}
+			\item \pitch{し/0,つ/1,れ/0,い/0}（失礼）
+			\item \pitch{の/0,み/1,も/0,の/0}（飲み物）
+		\end{itemize}
+	\end{multicols}
+	\item \textit{odaka}
+	\begin{multicols}{3}
+		\begin{itemize}
+			\item \pitch{い/0,も/1,う/1,と/1}（妹）
+			\item \pitch{お/0,と/1,う/1,と/1}（弟）
+		\end{itemize}
+	\end{multicols}
+\end{enumerate}
+
+\subsection{Još par korisnih pravila}
+Dva su korisna pravila vezana uz zamjenice:
+\begin{enumerate}
+	\item Zamjenice koje počinju na k-, s-, a- su \textit{heiban}:
+	\begin{multicols}{6}
+		\begin{itemize} 
+			\item \pitch{こ/0,れ/1}
+			\item \pitch{そ/0,こ/1}
+			\item \pitch{あ/0,の/1}
+			\item \pitch{そ/0,う/1}
+			\item \pitch{こ/0,ち/1,ら/1}
+			\item \vphantom{\pitch{か/1}}itd.
+		\end{itemize}
+	\end{multicols}
+	\item Upitne zamjenice su \textit{atamadaka}:
+	\begin{multicols}{6}
+		\begin{itemize}
+			\item \pitch{ど/1,れ/0}
+			\item \pitch{ど/1,こ/0}
+			\item \pitch{ど/1,の/0}
+			\item \pitch{ど/1,う/0}
+			\item \pitch{ど/1,ち/0,ら/0}
+			\item \pitch{だ/1,れ/0}
+			\item \pitch{い/1,つ/0}
+			\item \pitch{な/1,に/0}
+			\item \pitch{な/1,ぜ/0}
+			\item \vphantom{\pitch{か/1}}itd.
+		\end{itemize}
+	\end{multicols}
+\end{enumerate}
+
+Uz zamjenicu そう postoji i sufiks 〜そう, točnije sufiksna imenica, a ona je \textit{atamadaka}.
+Nju razlikujemo od zamjenice prema tome što iza nje može doći kopula:
+\begin{itemize}
+	\begin{multicols}{3}
+		\item \pitch{そ/1,う/0,で/0,す/0,か/0}？
+		\item \pitch{そ/1,う/0,だ/0,な/0}…
+		\item \pbox{\textwidth}{\pitch{ふ/0,り/1,そ/1,う/0,で/0,す/0}\bh（降りそうです）}\footnote{više o naglasku kod glagola u odjeljku \ref{sec:glagoli}}
+		
+	\end{multicols}
+\end{itemize}
+S druge strane, zamjenica そう je priložna i ona opisuje glagole:
+\begin{itemize}
+	\begin{multicols}{3}
+		\item \pitch{そ/0,う/1,い/1,う/1}
+		\item \pitch{そ/0,う/1,す/1,る/1}
+		\item \pitch{そ/0,う/1,し/1,よ/1,う/1}
+	\end{multicols}
+\end{itemize}

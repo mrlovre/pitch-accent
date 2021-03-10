@@ -1,0 +1,21 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{xeCJK}
+\setCJKmainfont{Noto Serif CJK JP}
+
+\begin{document}
+
+\begin{tikzpicture}[
+	every node/.style={inner sep=0.0, outer sep=0.0},
+	dot/.style={draw, fill, circle, minimum size=0.7ex}
+]
+\foreach[count=\i from 1] \x/\p in {\textbf{ひ}/1,が/0,つ/0,\textbf{よ}/1,い/0} 
+	\draw node (P\i) at (\i * 1.1em, 0) {\x\strut} node[dot] (C\i) at (\i * 1.1em, \p * 1.1ex + 2.6ex) {};
+
+\foreach[count=\i from 1, evaluate=\i as \j using int(\i - 1)] \x/\p in {ひ/1,が/0,つ/0,よ/1,い/0}
+	\ifnum \j>0
+		\draw ({C\i}.center) -- ({C\j}.center)
+	\fi;
+\end{tikzpicture}
+
+\end{document}
